@@ -1,0 +1,32 @@
+package ${prjname}
+
+import (               [0]
+	"testing"
+	"github.com/stretchr/testify/assert"
+)
+
+func TestNew{{srcname|capitalize}}(t *testing.T) {
+	exp := {{srcname|capitalize}}{}
+	act,err := New{{srcname|capitalize}}()
+  assert.NoError(t, err)
+  assert.Equal(t, exp,act)
+}
+
+func Test_{{srcname|capitalize}}(t *testing.T) {
+	suite.Run(t, new({{srcname|capitalize}}TestSuite))
+}
+
+type {{srcname|capitalize}}TestSuite struct {
+	suite.Suite
+	{{srcname|capitalize}} {{srcname|capitalize}}
+}
+
+func (suite *{{srcname|capitalize}}TestSuite) SetupTest() {
+	suite.{{srcname|capitalize}} = {{srcname|capitalize}}{}
+}
+
+func (suite *{{srcname|capitalize}}TestSuite) TestString() {
+	exp := ""
+	act,err := suite.{{srcname|capitalize}}.String()
+	suite.Equal(exp, act)
+}

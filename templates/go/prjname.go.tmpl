@@ -1,0 +1,16 @@
+package {{prjname}}
+
+import (
+	"fmt"
+)
+
+type  {{srcname|capitalize}} struct {
+}
+
+func New{{srcname|capitalize}}() ({{srcname|capitalize}},error) {
+	return {{srcname|capitalize}}{}
+}
+
+func ({{srcname[0]}} *{{srcname|capitalize}}) String() string {
+  return fmt.Sprintf("%#T", {{srcname[0]}})
+}
